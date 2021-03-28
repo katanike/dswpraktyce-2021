@@ -31,7 +31,7 @@ Kroki instalacji dla wersji Apache Spark 3.1.1:
 3. Ustawić zmienną SPARK_HOME, by wskazywała na katalog ze Sparkiem.
 
 
-## Windows
+#### Windows
 
 W środowisku Windows potrzebne jest dodatkowe narzędzie winutils.exe, które dostarcza skompilowane biblioteki platformy Apache Hadoop.
 
@@ -42,7 +42,7 @@ Program winutils.exe należy następnie skopiować do katalogu `bin`, który zna
 
 
 
-### Linux / MacOS
+#### Linux / MacOS
 
 W linuxowych środowiskach dodać do pliku ~/.bashrc albo ~/.zshrc (zależnie od stosowanego shella):
 
