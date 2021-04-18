@@ -58,7 +58,7 @@ Apache Spark bardzo dobrze integruje się ze środowiskiem Jupyter Notebook.
 Aby podpiąć Sparka pod notatniki można użyć tych sposobów:
 
 
-1. Użyć pakietu findspark
+#### Użyć pakietu findspark
 
 Instalacja:
 ```bash shell
@@ -75,7 +75,7 @@ from pyspark.sql import SparkSession
 spark = SparkSession.builder.appName("DataScience").getOrCreate()
 ```
 
-3. Ustawić zmienne środowiskowe
+#### Użyć konfiguracji systemowej
 
 Konfiguracja i uruchomienie pysparka:
 ```bash shell
