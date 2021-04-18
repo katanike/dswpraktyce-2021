@@ -55,27 +55,8 @@ export PATH="$SPARK_HOME/bin:$PATH"
 ### Uruchamianie Sparka w środowisku Jupyter Notebook
 
 Apache Spark bardzo dobrze integruje się ze środowiskiem Jupyter Notebook.
-Aby podpiąć Sparka pod notatniki można użyć tych sposobów:
 
-
-#### Użyć pakietu findspark
-
-Instalacja:
-```bash shell
-pip install findspark
-```
-
-Użycie w notatniku:
-```python
-import findspark
-findspark.init()                 # gdy zmienna SPARK_HOME jest ustawiona w systemie
-findspark.init(SPARK_HOME_PATH)  # gdy zmienna SPARK_HOME nie jest ustawiona w systemie
-
-from pyspark.sql import SparkSession
-spark = SparkSession.builder.appName("DataScience").getOrCreate()
-```
-
-#### Użyć konfiguracji systemowej
+#### Konfiguracja systemowej
 
 Konfiguracja i uruchomienie pysparka:
 ```bash shell
@@ -91,4 +72,21 @@ set PYSPARK_DRIVER_PYTHON="jupyter"
 set PYSPARK_DRIVER_PYTHON_OPTS="notebook" 
 
 %SPARK_HOME%\bin\pyspark
+```
+
+#### Pakiet findspark
+
+Instalacja:
+```bash shell
+pip install findspark
+```
+
+Użycie w notatniku:
+```python
+import findspark
+findspark.init()                 # gdy zmienna SPARK_HOME jest ustawiona w systemie
+findspark.init(SPARK_HOME_PATH)  # gdy zmienna SPARK_HOME nie jest ustawiona w systemie
+
+from pyspark.sql import SparkSession
+spark = SparkSession.builder.appName("DataScience").getOrCreate()
 ```
