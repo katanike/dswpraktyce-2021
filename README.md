@@ -56,7 +56,7 @@ export PATH="$SPARK_HOME/bin:$PATH"
 
 Apache Spark bardzo dobrze integruje się ze środowiskiem Jupyter Notebook.
 
-#### Konfiguracja systemowej
+#### Konfiguracja zmiennych środowiskowych
 
 Konfiguracja i uruchomienie pysparka:
 ```bash shell
