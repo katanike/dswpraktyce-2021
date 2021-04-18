@@ -74,7 +74,17 @@ set PYSPARK_DRIVER_PYTHON_OPTS="notebook"
 %SPARK_HOME%\bin\pyspark
 ```
 
+Od tej chwili w notatniku w Kernelu Python3 będzie dostępna zmienna `spark`, reprezentująca obiekt SparkSession.
+
+Użycie w notatniku:
+```python
+df = spark.createDataFrame(...)
+```
+
 #### Pakiet findspark
+
+Możliwe jest również użycie pakietu findspark, który ustawi referencje do zainstalowanego w systemie pysparka.
+W tym przypadku nie potrzeba nic ustawiać, jedynie wskazać na katalog domowy Sparka, czyli zazwyczaj ten, do którego go rozpakowaliśmy na swoim domowym komputerze.
 
 Instalacja:
 ```bash shell
