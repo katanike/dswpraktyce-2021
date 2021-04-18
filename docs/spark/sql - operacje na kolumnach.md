@@ -164,7 +164,7 @@ udf_reverse_string = udf(reverse_string, StringType())
 
 Użycie w Sparku:
 ```
-user_df = user_df.withColumn('reverse_name', reverse_string(user_df.name))
+user_df = user_df.withColumn('reverse_name', udf_reverse_string(user_df.name))
 ```    
 
 ### Przykład bezparametrowy - sortowanie
