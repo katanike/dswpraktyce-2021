@@ -40,6 +40,7 @@ https://github.com/steveloughran/winutils/blob/master/hadoop-2.6.3/bin/winutils.
 
 Program `winutils.exe` należy następnie skopiować do katalogu `bin`, który znajduje się w rozpakowanej paczce ze Sparkiem, czyli `%SPARK_HOME%\bin`.
 
+Ostatnim krokiem jest ustawienie zmiennej środowiskowej `HADOOP_HOME`, by wskazywała na ten sam katalog co `SPARK_HOME`.
 
 
 #### Linux / MacOS
@@ -48,8 +49,46 @@ W linuxowych środowiskach dodać do pliku ~/.bashrc albo ~/.zshrc (zależnie od
 
 ```shell script
 export SPARK_HOME=~/bin/spark-2.4.4-bin-hadoop2.7
+export PATH="$SPARK_HOME/bin:$PATH"
+```
+
+### Uruchamianie Sparka w środowisku Jupyter Notebook
+
+Apache Spark bardzo dobrze integruje się ze środowiskiem Jupyter Notebook.
+Aby podpiąć Sparka pod notatniki można użyć tych sposobów:
+
+
+1. Użyć pakietu findspark
+
+Instalacja:
+```bash shell
+pip install findspark
+```
+
+Użycie w notatniku:
+```python
+import findspark
+findspark.init()                 # gdy zmienna SPARK_HOME jest ustawiona w systemie
+findspark.init(SPARK_HOME_PATH)  # gdy zmienna SPARK_HOME nie jest ustawiona w systemie
+
+from pyspark.sql import SparkSession
+spark = SparkSession.builder.appName("DataScience").getOrCreate()
+```
+
+3. Ustawić zmienne środowiskowe
+
+Konfiguracja i uruchomienie pysparka:
+```bash shell
 export PYSPARK_DRIVER_PYTHON="jupyter" 
 export PYSPARK_DRIVER_PYTHON_OPTS="notebook" 
 
-export PATH="$SPARK_HOME/bin:$PATH"
+$SPARK_HOME/bin/pyspark
+```
+
+lub pod Windows:
+```bash shell
+set PYSPARK_DRIVER_PYTHON="jupyter" 
+set PYSPARK_DRIVER_PYTHON_OPTS="notebook" 
+
+%SPARK_HOME%\bin\pyspark
 ```
