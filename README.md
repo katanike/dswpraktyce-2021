@@ -6,8 +6,8 @@ Repozytorium przedmiotu Data Science w Praktyce
 Zawartość poszczególnych folderów:
 
 * /data - przykładowe dane do zadań 
-* /docs - folder zawierający slajdy z zajęć oraz dodatkowe materiały w formacie PDF oraz graficznym
-* /src - kod źródłowy do poszczególnych zadań
+* /docs - teksty i prezentacje do wykładów i ćwiczeń
+* /src - kod źródłowy do zadań
 
 Obecna zawartość repozytorium jest tymczasowa i będzie uzupełniana w miarę rozwoju zajęć.
 
